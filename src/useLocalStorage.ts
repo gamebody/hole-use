@@ -1,8 +1,9 @@
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
-const useLocalStorage = (key, initialValue) => {
-  const [state, setState] = useState(() => {
+const useLocalStorage = <T>(key: string, initialValue?: T): [T, React.Dispatch<T>] => {
+
+  const [state, setState] = useState<T>(() => {
     const localStorageValue = localStorage.getItem(key)
 
     if (localStorageValue) {
@@ -11,7 +12,6 @@ const useLocalStorage = (key, initialValue) => {
       return initialValue;
     }
   })
-
 
   useEffect(() => {
     localStorage.setItem(key, JSON.stringify(state));

@@ -17,7 +17,7 @@ const ShowDocs = props => {
 };
 
 const Demo = () => {
-  const [value, setValue] = useLocalStorage('hello', 'world！');
+  const [value, setValue] = useLocalStorage<string>('hello', 'world！');
 
   return (
     <div>
