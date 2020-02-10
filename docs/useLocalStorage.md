@@ -1,6 +1,6 @@
-使用
+# 使用
 
-<xmp>
+```javascript
 import { useLocalStorage } from 'react-use';
 
 const Demo = () => {
@@ -14,6 +14,6 @@ const Demo = () => {
     </div>
   );
 };
-</xmp>
+```
 
 
