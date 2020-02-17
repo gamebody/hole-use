@@ -17,7 +17,9 @@ const useLocalStorage = <T>(key: string, initialValue?: T): [T, React.Dispatch<T
   useEffect(() => {
     try {
       localStorage.setItem(key, JSON.stringify(state));
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   }, [state]);
 
   return [state, setState];
